@@ -23,11 +23,45 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
+            'transport' => [
+            'class' => 'Swift_SmtpTransport',
+            'host' => '', // введите хост или ip почтового сервера
+            'username' => '', // введите логин
+            'password' => '', // введите пароль
+            'port' => '',    // порт назначается в зависимости от службы
+            'encryption' => '',
+             ],
         ],
+
+        //пример для отправки через gmail.com
+        /*'mail' => [
+        'class' => 'yii\swiftmailer\Mailer',
+        'useFileTransport' => false,
+        'transport' => [
+            'class' => 'Swift_SmtpTransport',
+            'host' => 'smtp.gmail.com',
+            'username' => 'username@gmail.com',
+            'password' => 'password',
+            'port' => '587',
+            'encryption' => 'tls',
+                        ],
+        ],*/
+
+        //пример для отправки через MS Exchange
+        /*'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+            'class' => 'Swift_SmtpTransport',
+            'host' => 'exchange.example.com', //вставляем имя или адрес почтового сервера
+            'username' => '', 
+            'password' => '',
+            'port' => '25',
+            'encryption' => '',
+            ],
+        ],*/
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\MailerForm;
 
 class SiteController extends Controller
 {
@@ -90,5 +91,17 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionMailer()
+    {
+        $model = new MailerForm();
+        if ($model->load(Yii::$app->request->post()) && $model->sendEmail()) {
+            Yii::$app->session->setFlash('mailerFormSubmitted');
+            return $this->refresh();
+        }
+          return $this->render('mailer', [
+              'model' => $model,
+          ]);
     }
 }
