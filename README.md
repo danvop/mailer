@@ -1,3 +1,5 @@
+![GitHub watchers](https://img.shields.io/github/watchers/danvop/mailer?style=social)
+
 [![HitCount](http://hits.dwyl.com/danvop/mailer.svg)](http://hits.dwyl.com/danvop/mailer)
 
 Yii 2 Basic Mailer
