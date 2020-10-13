@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.com/danvop/mailer.svg)](http://hits.dwyl.com/danvop/mailer)
+
 Yii 2 Basic Mailer
 ============================
 
